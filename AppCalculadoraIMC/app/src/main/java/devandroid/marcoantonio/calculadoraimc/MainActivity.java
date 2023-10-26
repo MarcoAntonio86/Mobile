@@ -1,4 +1,4 @@
-package devandroid.marcoantonio.applistaalunos;
+package devandroid.marcoantonio.calculadoraimc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
