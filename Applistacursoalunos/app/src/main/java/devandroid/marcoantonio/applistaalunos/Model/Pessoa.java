@@ -39,4 +39,14 @@ public class Pessoa {
         public void setCpf(String cpf) {
                 Cpf = cpf;
         }
+
+        @Override
+        public String toString() {
+                return "Pessoa{" +
+                        "primeiroNome='" + primeiroNome + '\'' +
+                        ", SobreNome='" + SobreNome + '\'' +
+                        ", matricula='" + matricula + '\'' +
+                        ", Cpf='" + Cpf + '\'' +
+                        '}';
+        }
 }
