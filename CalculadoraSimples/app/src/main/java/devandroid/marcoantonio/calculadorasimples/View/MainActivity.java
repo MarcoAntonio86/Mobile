@@ -14,7 +14,7 @@ import devandroid.marcoantonio.calculadorasimples.R;
 
 public class MainActivity extends AppCompatActivity {
     Calculo calculo;
-    Calculo outrocalculo
+    Calculo outrocalculo;
 
     EditText  idnumero1;
     EditText  idnumero2;
