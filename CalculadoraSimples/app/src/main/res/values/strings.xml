@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Calculadora Simples</string>
+    <string name="txt_hint_edit_n_mero_1">Número 1</string>
+    <string name="txt_hint_edit_n_mero_2">Número 2</string>
+    <string name="txt_hint_edit_simbolo_escolhido">Simbolo escolhido</string>
+</resources>
