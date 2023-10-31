@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnlimpar;
     Button btncalculo;
-    Button btnsalvar;
     Button btnfinalizar;
 
 
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnlimpar = findViewById(R.id.btnlimapr);
         btncalculo = findViewById(R.id.btncalculo);
-        btnsalvar = findViewById(R.id.btnsalvar);
         btnfinalizar = findViewById(R.id.btnfinalizar);
 
         idnumero1.setText(calculo.getPrimeiroNumero());
@@ -69,17 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnsalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                outrocalculo.setPrimeiroNumero(idnumero1.getText().toString());
-                outrocalculo.setSegundoNumero(idnumero2.getText().toString());
-                outrocalculo.setSimboloEscolhido(idsimbolo.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Dados Salvo com sucesso" + outrocalculo.toString(), Toast.LENGTH_LONG).show();
-
-            }
-        });
 
 
 
