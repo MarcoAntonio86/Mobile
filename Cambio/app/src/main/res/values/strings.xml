@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cambio</string>
+    <string name="txt_hint_edit_moeda_1">Moeda 1</string>
+    <string name="txt_hint_edit_moeda_2">Moeda 2</string>
+    <string name="txt_hint_edit_valor">Valor</string>
+    <string name="txt_hint_edit_difer_ncia_cambial">Diferência Cambial</string>
 </resources>
