@@ -7,16 +7,15 @@
     tools:context=".View.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="174dp"
         android:layout_height="28dp"
         android:layout_margin="16dp"
-        android:text="Varaição Cambial !"
+        android:text="Variação Cambial !"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/idconverter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/idconverter"
@@ -28,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="101dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -91,18 +90,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
+        android:layout_marginBottom="28dp"
         android:text="Menor"
+        app:layout_constraintBottom_toTopOf="@+id/idcambial"
         app:layout_constraintEnd_toStartOf="@+id/btnmaior"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="448dp"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnmaior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="28dp"
         android:text="Maior"
         app:layout_constraintBottom_toTopOf="@+id/idcambial"
@@ -125,10 +125,11 @@
         android:id="@+id/btnlimpar"
         android:layout_width="112dp"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="52dp"
         android:text="Limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="615dp"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -136,11 +137,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="52dp"
         android:text="Finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toEndOf="@+id/btnlimpar" />
 
     <EditText
