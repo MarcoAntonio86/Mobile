@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ListaTarefa</string>
+    <string name="txt_hint_edit_insira_a_tarefa">Insira a Tarefa</string>
+</resources>
