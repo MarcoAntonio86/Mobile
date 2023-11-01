@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
-        android:text="<"
+        android:text="Menor"
         app:layout_constraintEnd_toStartOf="@+id/btnmaior"
         app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="28dp"
-        android:text=">"
+        android:text="Maior"
         app:layout_constraintBottom_toTopOf="@+id/idcambial"
         app:layout_constraintEnd_toEndOf="parent" />
 
