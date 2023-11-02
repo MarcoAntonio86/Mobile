@@ -1,8 +1,10 @@
-package com.marcoantonio.jogodaforca;
+package com.marcoantonio.jogodaforca.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.marcoantonio.jogodaforca.R;
 
 public class MainActivity extends AppCompatActivity {
 
