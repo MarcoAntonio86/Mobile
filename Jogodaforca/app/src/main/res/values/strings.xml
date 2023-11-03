@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jogo da Forca</string>
+    <string name="txt_hint_edit_insira_as_palavras">Insira as palavras</string>
+    <string name="txt_hint_edit_tentativa">Tentativa</string>
+    <string name="txt_hint_edit_acertos_e_erros">Acertos e Erros</string>
+    <string name="txt_hint_edit_resultado">Resultado</string>
 </resources>

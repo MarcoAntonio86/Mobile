@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.marcoantonio.jogodaforca"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.marcoantonio.jogodaforca"

@@ -40,8 +40,9 @@
         android:layout_marginBottom="476dp"
         android:autofillHints="Lista palavras"
         android:ems="10"
+        android:hint="@string/txt_hint_edit_insira_as_palavras"
         android:inputType="text"
-        android:text="Name"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.273"
@@ -54,9 +55,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Tentativa"
+        android:hint="@string/txt_hint_edit_tentativa"
         android:inputType="text"
-        android:text="Name"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.228"
@@ -75,67 +76,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idtentativa" />
 
-    <EditText
-        android:id="@+id/idacertoErro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Acertos e Erros"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idtitulo"
-        app:layout_constraintVertical_bias="0.713" />
-
-    <EditText
-        android:id="@+id/idresultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Resultado"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idtitulo"
-        app:layout_constraintVertical_bias="0.586" />
-
     <Button
         android:id="@+id/btnlimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="72dp"
         android:text="Limpar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idacertoErro" />
+        app:layout_constraintTop_toBottomOf="@+id/idresultado" />
 
     <Button
         android:id="@+id/btnsalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="72dp"
         android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idacertoErro" />
+        app:layout_constraintTop_toBottomOf="@+id/idresultado"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnfinalizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="72dp"
         android:text="Finalizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idacertoErro" />
+        app:layout_constraintTop_toBottomOf="@+id/idresultado"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/idresultado"
+        android:layout_width="279dp"
+        android:layout_height="53dp"
+        android:text="Resultado"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtitulo"
+        app:layout_constraintVertical_bias="0.687" />
+
+    <TextView
+        android:id="@+id/idacertoserros"
+        android:layout_width="291dp"
+        android:layout_height="51dp"
+        android:text="Acertos e Erros"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtitulo"
+        app:layout_constraintVertical_bias="0.564" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

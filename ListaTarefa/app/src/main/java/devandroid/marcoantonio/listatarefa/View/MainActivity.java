@@ -3,6 +3,7 @@ package devandroid.marcoantonio.listatarefa.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         btnsalvar = findViewById(R.id.btnsalvar);
         btnfinalizar = findViewById(R.id.btnfinalizar);
 
+        idinsira.setText(vlrinserido.getInsiratarefa());
+
         btnlimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Log.i("POOAndroid", vlrinserido.toString());
 
 
 
