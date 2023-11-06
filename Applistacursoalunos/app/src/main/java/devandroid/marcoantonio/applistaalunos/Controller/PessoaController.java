@@ -4,6 +4,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import devandroid.marcoantonio.applistaalunos.Model.Pessoa;
+
 public class PessoaController {
     @NonNull
     @Override
@@ -13,6 +15,8 @@ public class PessoaController {
 
     }
 
-    public void salvar() {
+    public void salvar(Pessoa pessoa) {
+
+        Log.d("MVC_Controller", "Dados Salvos" + toString());
     }
 }

@@ -2,6 +2,7 @@ package devandroid.marcoantonio.applistaalunos.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,9 @@ import devandroid.marcoantonio.applistaalunos.Model.Pessoa;
 import devandroid.marcoantonio.applistaalunos.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_lista";
 
     PessoaController controller;
     Pessoa pessoa;
@@ -34,17 +38,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor ListaAlunos = preferences.edit();
 
         controller = new PessoaController();
         controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Batman");
-        pessoa.setSobreNome("Heroi");
-        pessoa.setMatricula("10101010");
-        pessoa.setCpf("99999999999");
 
-        OutraPessoa = new Pessoa();
+        pessoa.setPrimeiroNome(preferences.getString("PrimeiroNome", "NA"));
+        pessoa.setSobreNome(preferences.getString("Sobrenome", "NA"));
+        pessoa.setMatricula(preferences.getString("Matricula", "NA"));
+        pessoa.setCpf(preferences.getString("CPF", "NA"));
 
 
         id_nome = findViewById(R.id.id_nome);
@@ -52,14 +57,17 @@ public class MainActivity extends AppCompatActivity {
         id_matricula = findViewById(R.id.id_matricula);
         id_cpf = findViewById(R.id.id_cpf);
 
-        btn_limpar = findViewById(R.id.btn_limpar);
-        btn_salvar = findViewById(R.id.btn_salvar);
-        btn_finalizar = findViewById(R.id.btn_finalizar);
-
         id_nome.setText(pessoa.getPrimeiroNome());
         id_sobrenome.setText(pessoa.getSobreNome());
         id_matricula.setText(pessoa.getMatricula());
         id_cpf.setText(pessoa.getCpf());
+
+        btn_limpar = findViewById(R.id.btn_limpar);
+        btn_salvar = findViewById(R.id.btn_salvar);
+        btn_finalizar = findViewById(R.id.btn_finalizar);
+
+
+
 
 
 
@@ -90,11 +98,19 @@ public class MainActivity extends AppCompatActivity {
                 OutraPessoa.setMatricula(id_matricula.getText().toString());
                 OutraPessoa.setCpf(id_cpf.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Dados Salvos" + OutraPessoa.toString(), Toast.LENGTH_LONG).show();
+
+                ListaAlunos.putString("PrimeiroNome", pessoa.getPrimeiroNome());
+                ListaAlunos.putString("Sobrenome", pessoa.getSobreNome());
+                ListaAlunos.putString("Matricula", pessoa.getMatricula());
+                ListaAlunos.putString("CPF", pessoa.getCpf());
+                ListaAlunos.apply();
+                controller.salvar(pessoa);
+
+
             }
         });
 
-        controller.salvar(pessoa);
+
 
         Log.i("POOAndroid", pessoa.toString());
 
