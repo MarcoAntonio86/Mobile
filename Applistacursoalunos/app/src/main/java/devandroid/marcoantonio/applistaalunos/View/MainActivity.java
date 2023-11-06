@@ -9,15 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import devandroid.marcoantonio.applistaalunos.Controller.PessoaController;
 import devandroid.marcoantonio.applistaalunos.Model.Pessoa;
 import devandroid.marcoantonio.applistaalunos.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaController controller;
     Pessoa pessoa;
     Pessoa OutraPessoa;
-
-    String DadosPessoas;
-    String DadosOutraPessoa;
 
     EditText id_nome;
     EditText id_sobrenome;
@@ -29,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     Button btn_finalizar;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        controller = new PessoaController();
+        controller.toString();
 
         pessoa = new Pessoa();
         pessoa.setPrimeiroNome("Batman");
@@ -43,10 +45,7 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setCpf("99999999999");
 
         OutraPessoa = new Pessoa();
-        /*OutraPessoa.setPrimeiroNome("Coringa");
-        OutraPessoa.setSobreNome("Vilão");
-        OutraPessoa.setMatricula("11111111");
-        OutraPessoa.setCpf("11111111111");*/
+
 
         id_nome = findViewById(R.id.id_nome);
         id_sobrenome = findViewById(R.id.id_sobrenome);
@@ -62,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         id_matricula.setText(pessoa.getMatricula());
         id_cpf.setText(pessoa.getCpf());
 
+
+
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         btn_finalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText( MainActivity.this, "Aplicativo Finalizado", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Aplicativo Finalizado", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
@@ -93,30 +94,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        controller.salvar(pessoa);
 
-
-
-       /* DadosPessoas = "Primeiro nome: ";
-        DadosPessoas += pessoa.getPrimeiroNome();
-        DadosPessoas += "Sobrenome: ";
-        DadosPessoas += pessoa.getSobreNome();
-        DadosPessoas += "Matrícula: ";
-        DadosPessoas += pessoa.getMatricula();
-        DadosPessoas += "CPF: ";
-        DadosPessoas += pessoa.getCpf();
-
-        DadosOutraPessoa = "Primeiro nome: ";
-        DadosOutraPessoa += pessoa.getPrimeiroNome();
-        DadosOutraPessoa += "Sobrenome: ";
-        DadosOutraPessoa += pessoa.getSobreNome();
-        DadosOutraPessoa += "Matrícula: ";
-        DadosOutraPessoa += pessoa.getMatricula();
-        DadosOutraPessoa += "CPF: ";
-        DadosOutraPessoa += pessoa.getCpf();*/
-
-        Log.i("POOAndroid",pessoa.toString());
-        Log.i("POOAndroid",OutraPessoa.toString());
-
+        Log.i("POOAndroid", pessoa.toString());
 
 
     }
