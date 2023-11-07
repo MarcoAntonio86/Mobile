@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     PessoaController controller;
     Pessoa pessoa;
-    Pessoa OutraPessoa;
+
 
     EditText id_nome;
     EditText id_sobrenome;
@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
                 id_matricula.setText("");
                 id_cpf.setText("");
 
+                ListaAlunos.clear();
+                ListaAlunos.apply();
+
             }
         });
 
@@ -93,11 +96,12 @@ public class MainActivity extends AppCompatActivity {
         btn_salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OutraPessoa.setPrimeiroNome(id_nome.getText().toString());
-                OutraPessoa.setSobreNome(id_sobrenome.getText().toString());
-                OutraPessoa.setMatricula(id_matricula.getText().toString());
-                OutraPessoa.setCpf(id_cpf.getText().toString());
+                pessoa.setPrimeiroNome(id_nome.getText().toString());
+                pessoa.setSobreNome(id_sobrenome.getText().toString());
+                pessoa.setMatricula(id_matricula.getText().toString());
+                pessoa.setCpf(id_cpf.getText().toString());
 
+                Toast.makeText(MainActivity.this, "Dados Salvos com sucesso" + pessoa.toString(),Toast.LENGTH_LONG).show();
 
                 ListaAlunos.putString("PrimeiroNome", pessoa.getPrimeiroNome());
                 ListaAlunos.putString("Sobrenome", pessoa.getSobreNome());
