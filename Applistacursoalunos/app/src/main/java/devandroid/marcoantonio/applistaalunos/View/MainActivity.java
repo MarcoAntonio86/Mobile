@@ -16,12 +16,8 @@ import devandroid.marcoantonio.applistaalunos.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-    public static final String NOME_PREFERENCES = "pref_lista";
-
     PessoaController controller;
     Pessoa pessoa;
-
 
     EditText id_nome;
     EditText id_sobrenome;
@@ -32,25 +28,17 @@ public class MainActivity extends AppCompatActivity {
     Button btn_salvar;
     Button btn_finalizar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor ListaAlunos = preferences.edit();
-
-        controller = new PessoaController();
+        controller = new PessoaController(this);
         controller.toString();
 
         pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome(preferences.getString("PrimeiroNome", "NA"));
-        pessoa.setSobreNome(preferences.getString("Sobrenome", "NA"));
-        pessoa.setMatricula(preferences.getString("Matricula", "NA"));
-        pessoa.setCpf(preferences.getString("CPF", "NA"));
-
+        controller.buscar(pessoa);
 
         id_nome = findViewById(R.id.id_nome);
         id_sobrenome = findViewById(R.id.id_sobrenome);
@@ -66,11 +54,6 @@ public class MainActivity extends AppCompatActivity {
         btn_salvar = findViewById(R.id.btn_salvar);
         btn_finalizar = findViewById(R.id.btn_finalizar);
 
-
-
-
-
-
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 id_matricula.setText("");
                 id_cpf.setText("");
 
-                ListaAlunos.clear();
-                ListaAlunos.apply();
+                controller.limpar();
 
             }
         });
@@ -103,18 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Dados Salvos com sucesso" + pessoa.toString(),Toast.LENGTH_LONG).show();
 
-                ListaAlunos.putString("PrimeiroNome", pessoa.getPrimeiroNome());
-                ListaAlunos.putString("Sobrenome", pessoa.getSobreNome());
-                ListaAlunos.putString("Matricula", pessoa.getMatricula());
-                ListaAlunos.putString("CPF", pessoa.getCpf());
-                ListaAlunos.apply();
                 controller.salvar(pessoa);
-
 
             }
         });
-
-
 
         Log.i("POOAndroid", pessoa.toString());
 
