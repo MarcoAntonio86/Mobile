@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import devandroid.marcoantonio.calculadorasimples.Controller.CalculadoraController;
 import devandroid.marcoantonio.calculadorasimples.Model.Calculo;
 import devandroid.marcoantonio.calculadorasimples.R;
 
 public class MainActivity extends AppCompatActivity {
     Calculo calculo;
-    Calculo outrocalculo;
+   // Calculo outrocalculo;
+
+    CalculadoraController controller;
 
     EditText  idnumero1;
     EditText  idnumero2;
@@ -30,12 +33,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        calculo = new Calculo();
-        calculo.setPrimeiroNumero("2");
-        calculo.setSegundoNumero("2");
-        calculo.setSimboloEscolhido("+");
+        controller = new CalculadoraController();
+        controller.toString();
 
-        outrocalculo = new Calculo();
+        calculo = new Calculo();
+        /*calculo.setPrimeiroNumero("2");
+        calculo.setSegundoNumero("2");
+        calculo.setSimboloEscolhido("+");*/
+
+       // outrocalculo = new Calculo();
 
         idnumero1 = findViewById(R.id.idnumero1);
         idnumero2 = findViewById(R.id.idnumero2);
