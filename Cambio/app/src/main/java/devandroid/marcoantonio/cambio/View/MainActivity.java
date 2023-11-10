@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import devandroid.marcoantonio.cambio.Controller.CambioController;
 import devandroid.marcoantonio.cambio.Model.Cambial;
 import devandroid.marcoantonio.cambio.R;
 
 public class MainActivity extends AppCompatActivity {
+
+        CambioController controller;
         Cambial vlrcambio;
-        Cambial outrovlrcambial;
+       // Cambial outrovlrcambial;
 
         EditText idmoeda1;
         EditText idmoeda2;
@@ -31,13 +34,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+    controller = new CambioController(this);
+    controller.toString();
+
         vlrcambio = new Cambial();
-        vlrcambio.setMoeda1("Real");
+       /* vlrcambio.setMoeda1("Real");
         vlrcambio.setMoeda2("Dolar");
         vlrcambio.setValor("5");
-        vlrcambio.setDiferencaCambial("5");
+        vlrcambio.setDiferencaCambial("5");*/
 
-        outrovlrcambial = new Cambial();
+        //outrovlrcambial = new Cambial();
+
+        controller.buscar(vlrcambio);
 
         idmoeda1 = findViewById(R.id.idmoeda1);
         idmoeda2 = findViewById(R.id.idmoeda2);
@@ -61,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 idmoeda2.setText("");
                 idvalor.setText("");
                 iddiferenca.setText("");
+
+                controller.limpar();
 
             }
         });
