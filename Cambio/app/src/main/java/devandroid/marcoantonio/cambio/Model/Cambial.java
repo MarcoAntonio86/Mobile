@@ -6,7 +6,7 @@ public class Cambial {
     private String Valor;
     private String DiferencaCambial;
 
-    public Cambial () {}
+    public Cambial() {}
 
     public String getMoeda1() {
         return Moeda1;

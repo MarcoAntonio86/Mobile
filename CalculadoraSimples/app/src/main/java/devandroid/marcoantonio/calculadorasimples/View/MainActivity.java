@@ -15,7 +15,6 @@ import devandroid.marcoantonio.calculadorasimples.R;
 
 public class MainActivity extends AppCompatActivity {
     Calculo calculo;
-   // Calculo outrocalculo;
 
     CalculadoraController controller;
 
@@ -27,21 +26,17 @@ public class MainActivity extends AppCompatActivity {
     Button btncalculo;
     Button btnfinalizar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        controller = new CalculadoraController();
+        controller = new CalculadoraController(this);
         controller.toString();
 
         calculo = new Calculo();
-        /*calculo.setPrimeiroNumero("2");
-        calculo.setSegundoNumero("2");
-        calculo.setSimboloEscolhido("+");*/
 
-       // outrocalculo = new Calculo();
+        controller.buscar(calculo);
 
         idnumero1 = findViewById(R.id.idnumero1);
         idnumero2 = findViewById(R.id.idnumero2);
@@ -62,20 +57,18 @@ public class MainActivity extends AppCompatActivity {
                 idnumero2.setText("");
                 idsimbolo.setText("");
 
+                controller.limpar();
+
             }
         });
 
         btnfinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Aplicativo Finalizado com sucesso", Toast.LENGTH_LONG ).show();
+                 Toast.makeText(MainActivity.this,"Aplicativo Finalizado com sucesso", Toast.LENGTH_LONG ).show();
                 finish();
             }
         });
-
-
-
-
 
         Log.i("PooAndroid", calculo.toString());
 

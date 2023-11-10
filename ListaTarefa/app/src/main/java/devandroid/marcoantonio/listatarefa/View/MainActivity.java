@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import devandroid.marcoantonio.listatarefa.Controller.ListaController;
 import devandroid.marcoantonio.listatarefa.Model.Listada;
 import devandroid.marcoantonio.listatarefa.R;
 
 public class MainActivity extends AppCompatActivity {
+
+        ListaController controller;
         Listada vlrinserido;
-        Listada outrovlrinserido;
+
 
         EditText idinsira;
 
@@ -33,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        vlrinserido = new Listada();
-        vlrinserido.setInsiratarefa("Lavar");
+        controller = new ListaController(this);
+        controller.toString();
 
-        outrovlrinserido = new Listada();
+        vlrinserido = new Listada();
+
+        controller.buscar(vlrinserido);
 
         idinsira = findViewById(R.id.idinsira);
 
@@ -55,15 +60,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 idinsira.setText("");
+                controller.limpar();
             }
         });
 
         btnsalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                outrovlrinserido.setInsiratarefa(idinsira.getText().toString());
-                Toast.makeText(MainActivity.this, "Dados Salvos" + outrovlrinserido.toString(), Toast.LENGTH_LONG).show();
-
+                vlrinserido.setInsiratarefa(idinsira.getText().toString());
+                Toast.makeText(MainActivity.this, "Dados Salvos" + vlrinserido.toString(), Toast.LENGTH_LONG).show();
+                controller.salvar(vlrinserido);
             }
         });
 

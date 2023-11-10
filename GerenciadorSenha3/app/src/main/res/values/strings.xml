@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GerenciadorSenha3</string>
+    <string name="txt_hint_edit_senha_master">Senha Master</string>
+    <string name="txt_hint_edit_senha_que_quer_salvar">Senha que quer salvar</string>
+</resources>
