@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">jogoforca</string>
+    <string name="txt_hint_edit_insira_as_palavras">Insira as Palavras</string>
+    <string name="txt_hint_edit_tentativas">Tentativas</string>
+</resources>
