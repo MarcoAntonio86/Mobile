@@ -2,22 +2,30 @@ package devandroid.marcoantonio.applistaalunos.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import devandroid.marcoantonio.applistaalunos.Controller.CursoController;
 import devandroid.marcoantonio.applistaalunos.Controller.PessoaController;
 import devandroid.marcoantonio.applistaalunos.Model.Pessoa;
 import devandroid.marcoantonio.applistaalunos.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    CursoController cursoController;
     PessoaController controller;
     Pessoa pessoa;
+
+    List<String> nomesCursos;
 
     EditText id_nome;
     EditText id_sobrenome;
@@ -28,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_salvar;
     Button btn_finalizar;
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new PessoaController(this);
         controller.toString();
+
+        cursoController = new CursoController();
+        nomesCursos = cursoController.getListacursos();
+        cursoController.getListacursos();
 
         pessoa = new Pessoa();
 
@@ -45,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         id_matricula = findViewById(R.id.id_matricula);
         id_cpf = findViewById(R.id.id_cpf);
 
+        spinner = findViewById(R.id.spinner);
+
         id_nome.setText(pessoa.getPrimeiroNome());
         id_sobrenome.setText(pessoa.getSobreNome());
         id_matricula.setText(pessoa.getMatricula());
@@ -53,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         btn_limpar = findViewById(R.id.btn_limpar);
         btn_salvar = findViewById(R.id.btn_salvar);
         btn_finalizar = findViewById(R.id.btn_finalizar);
+
+        ArrayAdapter<String > adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cursoController.dadosSpinner());
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
 
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
