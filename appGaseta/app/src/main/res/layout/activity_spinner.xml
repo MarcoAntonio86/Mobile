@@ -7,7 +7,6 @@
     tools:context=".View.MainActivity"
     android:orientation="vertical">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,7 +37,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="@string/txt_hint_edit_nome"
+                android:hint="@string/txt_hint_edit_posto"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 />
@@ -51,7 +50,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="@string/txt_hint_edit_sobrenome"
+                android:hint="@string/txt_hint_edit_Gasolina"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 />
@@ -82,7 +81,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:ems="10"
-                android:hint="@string/txt_hint_edit_cpf"
+                android:hint="@string/txt_hint_edit_Litros"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 />
