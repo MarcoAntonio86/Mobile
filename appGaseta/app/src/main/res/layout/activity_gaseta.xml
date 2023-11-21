@@ -44,7 +44,7 @@
                 android:gravity="center_horizontal"/>
 
             <EditText
-                android:id="@+id/id_nome"
+                android:id="@+id/id_posto"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
                 android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/id_sobrenome"
+                android:id="@+id/id_gasolina"
                 android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -76,7 +76,7 @@
 
 
             <EditText
-                android:id="@+id/id_matricula"
+                android:id="@+id/id_etanol"
                 android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -91,7 +91,7 @@
 
 
             <EditText
-                android:id="@+id/id_cpf"
+                android:id="@+id/id_litros"
                 android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -105,7 +105,7 @@
                 android:layout_gravity="center_horizontal"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_calcular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
