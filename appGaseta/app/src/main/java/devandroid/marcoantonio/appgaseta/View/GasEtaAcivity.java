@@ -2,6 +2,7 @@ package devandroid.marcoantonio.appgaseta.View;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -53,17 +54,34 @@ public class GasEtaAcivity extends AppCompatActivity {
         btn_finalizar = findViewById(R.id.btn_finalizar);
 
 
-       /* btn_calcular.setOnClickListener(new View.OnClickListener() {
+        btn_calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gaseta.setGasolina(id_gasolina.getText().toString());
+
+               boolean isDadosDk = true;
+
+               if (TextUtils.isEmpty(id_etanol.getText())){
+                   id_etanol.setError("Obrigatorio");
+                   id_etanol.requestFocus();
+                   isDadosDk = false;
+               }
+               if(TextUtils.isEmpty(id_gasolina.getText())){
+                   id_gasolina.setError("Obrigatorio");
+                   id_gasolina.requestFocus();
+                   isDadosDk = false;
+               }
+
+               if (isDadosDk) {
+                   
+               }
+                /*gaseta.setGasolina(id_gasolina.getText().toString());
                 gaseta.setEtanol(id_etanol.getText().toString());
                 Toast.makeText((Context) GasEtaAcivity.this, UtilGaseta.calcularMelhorOpcao(3.19, 5.50),
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show();*/
 
 
             }
-        });*/
+        });
 
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
