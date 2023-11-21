@@ -2,6 +2,7 @@ package devandroid.marcoantonio.appgaseta.Util;
 
 public class UtilGaseta {
 
+
     // metodo não estatico
 
     public void metodoNaoEstatico() {

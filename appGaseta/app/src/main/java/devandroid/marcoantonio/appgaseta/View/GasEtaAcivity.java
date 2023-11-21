@@ -1,5 +1,6 @@
 package devandroid.marcoantonio.appgaseta.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +48,23 @@ public class GasEtaAcivity extends AppCompatActivity {
         id_etanol = findViewById(R.id.id_etanol);
         id_litros = findViewById(R.id.id_litros);
 
+        btn_limpar = findViewById(R.id.btn_limpar);
+        btn_salvar = findViewById(R.id.btn_salvar);
+        btn_finalizar = findViewById(R.id.btn_finalizar);
+
+
+       /* btn_calcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gaseta.setGasolina(id_gasolina.getText().toString());
+                gaseta.setEtanol(id_etanol.getText().toString());
+                Toast.makeText((Context) GasEtaAcivity.this, UtilGaseta.calcularMelhorOpcao(3.19, 5.50),
+                        Toast.LENGTH_SHORT).show();
+
+
+            }
+        });*/
+
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +105,7 @@ public class GasEtaAcivity extends AppCompatActivity {
 
         //utilGasEta.metodoEstatico();
 
-       /* Toast.makeText(GasEtaAcivity.this, UtilGaseta.calcularMelhorOpcao(5.12,3.19),
-               Toast.LENGTH_SHORT).show();*/
+        Toast.makeText(GasEtaAcivity.this, UtilGaseta.calcularMelhorOpcao(5.12,3.19),
+               Toast.LENGTH_SHORT).show();
     }
 }
