@@ -90,19 +90,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            <EditText
-                android:id="@+id/id_litros"
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_Litros"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:gravity="center_horizontal"
-                android:layout_gravity="center_horizontal"/>
+
 
             <Button
                 android:id="@+id/btn_calcular"
@@ -118,13 +106,13 @@
 
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/id_resultado"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="22dp"
-                android:text="Valor Total a Pagar"
+                android:text="Resultado"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
@@ -151,6 +139,7 @@
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="50dp"
                     android:backgroundTint="@color/teal_200"
+                    android:enabled="false"
                     android:text="Salvar" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

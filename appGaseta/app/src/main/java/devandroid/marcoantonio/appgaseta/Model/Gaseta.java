@@ -4,7 +4,7 @@ public class Gaseta {
     private String Posto;
     private String Gasolina;
     private String Etanol;
-    private String Litros;
+
 
     public String getPosto() {
         return Posto;
@@ -30,9 +30,7 @@ public class Gaseta {
         Etanol = etanol;
     }
 
-    public String getLitros() {
-        return Litros;
-    }
+
 
     @Override
     public String toString() {
@@ -40,13 +38,9 @@ public class Gaseta {
                 "Posto='" + Posto + '\'' +
                 ", Gasolina='" + Gasolina + '\'' +
                 ", Etanol='" + Etanol + '\'' +
-                ", Litros='" + Litros + '\'' +
+
                 '}';
     }
 
-    public void setLitros(String litros) {
-        Litros = litros;
 
-
-    }
 }

@@ -19,7 +19,8 @@ public class UtilGaseta {
         return "Seja bem Vindo";
     }
 
-    public static String calcularMelhorOpcao(double gasolina, double etanol) {
+   public static String calcularMelhorOpcao(double gasolina, double etanol) {
+
 
         double precoIdeal = gasolina * 0.70;
         String mensagemRetorno;

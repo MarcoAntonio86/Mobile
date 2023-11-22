@@ -35,7 +35,6 @@ public class GasEtaController {
         ListaCombustivel.putString("Posto", gaseta.getPosto());
         ListaCombustivel.putString("Gasolina", gaseta.getGasolina());
         ListaCombustivel.putString("Etanol", gaseta.getEtanol());
-        ListaCombustivel.putString("Litros", gaseta.getLitros());
         ListaCombustivel.apply();
     }
 
@@ -43,7 +42,6 @@ public class GasEtaController {
         gaseta.setPosto(preferences.getString("Posto", "NA"));
         gaseta.setGasolina(preferences.getString("Gasolina", "NA"));
         gaseta.setEtanol(preferences.getString("Etanol", "NA"));
-        gaseta.setLitros(preferences.getString("Litros", "NA"));
         return gaseta;
     }
 
