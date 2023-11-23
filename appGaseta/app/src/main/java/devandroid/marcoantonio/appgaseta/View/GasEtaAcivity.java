@@ -24,7 +24,7 @@ public class GasEtaAcivity extends AppCompatActivity {
 
     GasEtaController gasEtaController;
 
-   // Gaseta gaseta;
+    Gaseta gaseta;
 
     Combustivel combustivelEtanol;
     Combustivel combustivelGasolina;
@@ -56,9 +56,9 @@ public class GasEtaAcivity extends AppCompatActivity {
 
 
 
-        //gaseta = new Gaseta();
+        gaseta = new Gaseta();
 
-       // gasEtaController.buscar(gaseta);
+        gasEtaController.buscar(gaseta);
 
         id_posto = findViewById(R.id.id_posto);
         id_gasolina = findViewById(R.id.id_gasolina);
@@ -71,9 +71,9 @@ public class GasEtaAcivity extends AppCompatActivity {
 
         id_resultado = findViewById(R.id.id_resultado);
 
-      //  id_posto.setText(gaseta.getPosto());
-      //  id_gasolina.setText(gaseta.getGasolina());
-      //  id_etanol.setText(gaseta.getEtanol());
+        id_posto.setText(gaseta.getPosto());
+        id_gasolina.setText(gaseta.getGasolina());
+        id_etanol.setText(gaseta.getEtanol());
 
 
 
@@ -119,7 +119,7 @@ public class GasEtaAcivity extends AppCompatActivity {
                 btn_salvar.setEnabled(false);
 
 
-                //gasEtaController.limpar();
+                gasEtaController.limpar();
             }
         });
 
@@ -147,17 +147,16 @@ public class GasEtaAcivity extends AppCompatActivity {
 
                 combustivelGasolina.setRecomendacao(UtilGaseta.calcularMelhorOpcao(precoGasolina, precoEtanol));
                 combustivelEtanol.setRecomendacao(UtilGaseta.calcularMelhorOpcao(precoGasolina, precoEtanol));
-               // gaseta.setPosto(id_posto.getText().toString());
-               // gaseta.setGasolina(id_gasolina.getText().toString());
-              //  gaseta.setEtanol(id_etanol.getText().toString());
+                gaseta.setPosto(id_posto.getText().toString());
+                gaseta.setGasolina(id_gasolina.getText().toString());
+                gaseta.setEtanol(id_etanol.getText().toString());
+                  Toast.makeText(GasEtaAcivity.this,"Dados Salvos com sucesso" + gaseta.toString(), Toast.LENGTH_LONG).show();
 
-              //  Toast.makeText(GasEtaAcivity.this,"Dados Salvos com sucesso" + gaseta.toString(), Toast.LENGTH_LONG).show();
-
-                //gasEtaController.salvar(gaseta);
+                gasEtaController.salvar(gaseta);
             }
         });
 
-        //Log.i("POOAndroid", gaseta.toString());
+        Log.i("POOAndroid", gaseta.toString());
 
         // utilGaseta.metodoNaoEstatico();
 

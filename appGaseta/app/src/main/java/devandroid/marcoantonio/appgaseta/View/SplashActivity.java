@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import devandroid.marcoantonio.appgaseta.DataBase.GasEtaDB;
 import devandroid.marcoantonio.appgaseta.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -21,9 +22,13 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void cumutartelaSplash() {
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                GasEtaDB db = new GasEtaDB(SplashActivity.this);
+
                 Intent telaPrincipal = new Intent(SplashActivity.this, GasEtaAcivity.class);
                 startActivity(telaPrincipal);
                 finish();
