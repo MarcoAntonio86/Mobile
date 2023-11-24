@@ -24,7 +24,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="20dp"
-                android:text="APP Gaseta"
+                android:text="APP Lista de Tarefas !!!"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
@@ -38,7 +38,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="50dp"
-                android:text="Gasolina X Etanol"
+                android:text="Informe aqui sua tarefas !!!"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"/>
@@ -51,46 +51,10 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="30dp"
                 android:ems="10"
-                android:hint="@string/txt_hint_edit_posto"
+                android:hint="@string/txt_hint_edit_Tarefas"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 />
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/id_gasolina"
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_Gasolina"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
-
-
-
-            <EditText
-                android:id="@+id/id_etanol"
-                android:layout_width="166dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_Etanol"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
 
             <Button
                 android:id="@+id/btn_calcular"
@@ -100,26 +64,47 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/teal_200"
-                android:text="Calcular"
+                android:text="Adicionar Tarefas"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"/>
-
-
-            <TextView
-                android:id="@+id/id_resultado"
+            <Button
+                android:id="@+id/btn_marcar"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="128dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="22dp"
-                android:text="Resultado"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="Marcar Tarefa"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"/>
+            <Button
+                android:id="@+id/btn_excluir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="Excluir Tarefa"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                tools:ignore="DuplicateIds" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                />
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="60dp">
 
                 <Button
                     android:id="@+id/btn_limpar"

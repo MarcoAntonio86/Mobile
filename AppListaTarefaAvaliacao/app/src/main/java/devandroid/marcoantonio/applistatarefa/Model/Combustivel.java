@@ -1,4 +1,4 @@
-package devandroid.marcoantonio.appgaseta.Model;
+package devandroid.marcoantonio.applistatarefa.Model;
 
 public class Combustivel {
 

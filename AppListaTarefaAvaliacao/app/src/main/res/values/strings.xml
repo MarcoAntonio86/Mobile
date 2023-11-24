@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">App listatarefa</string>
+    <string name="txt_hint_edit_Tarefas">Tarefas</string>
+    <string name="txt_hint_edit_Gasolina">Gasolina</string>
+    <string name="txt_hint_edit_Etanol">Etanol</string>
+    <string name="txt_hint_edit_Litros">Litros</string>
+    <string name="txt_button_limpar">LIMPAR</string>
+    <string name="txt_button_salvar">SALVAR</string>
+    <string name="txt_button_finalizar">FINALIZAR</string>
+
+
+</resources>

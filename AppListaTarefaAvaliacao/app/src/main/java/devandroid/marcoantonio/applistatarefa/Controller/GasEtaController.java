@@ -1,4 +1,4 @@
-package devandroid.marcoantonio.appgaseta.Controller;
+package devandroid.marcoantonio.applistatarefa.Controller;
 
 import android.content.ContentValues;
 import android.content.SharedPreferences;
@@ -6,10 +6,10 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import devandroid.marcoantonio.appgaseta.DataBase.GasEtaDB;
-import devandroid.marcoantonio.appgaseta.Model.Combustivel;
-import devandroid.marcoantonio.appgaseta.Model.Gaseta;
-import devandroid.marcoantonio.appgaseta.View.GasEtaAcivity;
+import devandroid.marcoantonio.applistatarefa.DataBase.GasEtaDB;
+import devandroid.marcoantonio.applistatarefa.Model.Combustivel;
+import devandroid.marcoantonio.applistatarefa.Model.Gaseta;
+import devandroid.marcoantonio.applistatarefa.View.GasEtaAcivity;
 
 public class GasEtaController extends GasEtaDB {
     SharedPreferences preferences;

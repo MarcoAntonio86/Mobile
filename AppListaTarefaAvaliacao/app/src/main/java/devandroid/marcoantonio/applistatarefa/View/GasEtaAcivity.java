@@ -1,6 +1,5 @@
-package devandroid.marcoantonio.appgaseta.View;
+package devandroid.marcoantonio.applistatarefa.View;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,11 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import devandroid.marcoantonio.appgaseta.Controller.GasEtaController;
-import devandroid.marcoantonio.appgaseta.Model.Combustivel;
-import devandroid.marcoantonio.appgaseta.Model.Gaseta;
-import devandroid.marcoantonio.appgaseta.R;
-import devandroid.marcoantonio.appgaseta.Util.UtilGaseta;
+import devandroid.marcoantonio.applistatarefa.Controller.GasEtaController;
+import devandroid.marcoantonio.applistatarefa.Model.Combustivel;
+import devandroid.marcoantonio.applistatarefa.Model.Gaseta;
+import devandroid.marcoantonio.applistatarefa.R;
+import devandroid.marcoantonio.applistatarefa.Util.UtilGaseta;
 
 public class GasEtaAcivity extends AppCompatActivity {
 
@@ -49,7 +48,7 @@ public class GasEtaAcivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gaseta);
+        setContentView(R.layout.activity_listatarefa);
 
         gasEtaController = new GasEtaController(this);
         gasEtaController.toString();
