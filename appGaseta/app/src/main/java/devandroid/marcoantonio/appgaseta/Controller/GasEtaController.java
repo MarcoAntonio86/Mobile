@@ -6,6 +6,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import java.util.List;
+
 import devandroid.marcoantonio.appgaseta.DataBase.GasEtaDB;
 import devandroid.marcoantonio.appgaseta.Model.Combustivel;
 import devandroid.marcoantonio.appgaseta.Model.Gaseta;
@@ -56,6 +58,11 @@ public class GasEtaController extends GasEtaDB {
         gaseta.setGasolina(preferences.getString("Gasolina", "NA"));
         gaseta.setEtanol(preferences.getString("Etanol", "NA"));
         return gaseta;
+    }
+
+
+    public List<Combustivel> getlistDados() {
+        return listDados();
     }
 
     public void limpar () {

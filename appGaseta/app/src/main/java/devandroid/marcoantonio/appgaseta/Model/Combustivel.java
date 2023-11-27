@@ -5,7 +5,15 @@ public class Combustivel {
     private String nomeCombustivel;
     private double precoCombustivel;
     private String recomendacao;
+    private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNomeCombustivel() {
         return nomeCombustivel;
