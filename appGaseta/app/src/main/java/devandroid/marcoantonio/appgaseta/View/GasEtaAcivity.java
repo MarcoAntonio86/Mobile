@@ -58,6 +58,14 @@ public class GasEtaAcivity extends AppCompatActivity {
         gasEtaController = new GasEtaController(this);
         dados = gasEtaController.getlistDados();
 
+        Combustivel objAlteracao = dados.get(5);
+        objAlteracao.setNomeCombustivel("Gasolina Adulterada");
+        objAlteracao.setPrecoCombustivel(8.99);
+        objAlteracao.setRecomendacao("Sai fora que é fria");
+
+        gasEtaController.alterar(objAlteracao);
+        gasEtaController.deletar(1);
+
 
         gasEtaController.toString();
 

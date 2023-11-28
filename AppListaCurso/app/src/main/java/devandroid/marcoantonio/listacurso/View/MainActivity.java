@@ -40,5 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
 
+        id_curso.setText(curso.getCurso());
+
+        btn_salvar = findViewById(R.id.btn_salvar);
+        btn_excluir = findViewById(R.id.id_excluir);
+        btn_limpar = findViewById(R.id.id_limpar);
+        btn_finalizar = findViewById(R.id.id_finalizar);
+
     }
 }
