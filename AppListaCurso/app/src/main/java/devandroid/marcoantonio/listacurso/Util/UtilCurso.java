@@ -18,6 +18,8 @@ public class UtilCurso {
     }
 
     public static String palavras (String curso) {
+        String converter = curso.toUpperCase();
 
+        if ()
     }
 }

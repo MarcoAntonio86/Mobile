@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        controller = new CursoController();
+        controller = new CursoController(this);
         controller.toString();
 
         curso = new  Curso();
