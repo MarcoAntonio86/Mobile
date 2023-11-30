@@ -1,5 +1,6 @@
 package devandroid.marcoantonio.listacurso.Controller;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.util.Log;
 
@@ -29,6 +30,22 @@ public class CursoController {
 
         public void salvar(Cursando cursando) {
 
+            ContentValues dados = new ContentValues();
+
+            ListaCurso.putString("nomeCurso", cursando.getNomeCurso());
+            ListaCurso.apply();
+
+            dados.put("nomeCurso", cursando.getNomeCurso());
+            // dados.put("recomendacao", combustivel.getRecomendacao()); você tem de descobrir o equivalente a isso p/ o codigo
+
+            salvarObjeto("curso", dados);
+        }
+
+        public void deletar(int id) {deletarObjeto("curso", id);}
+
+        public void limpar() {
+            ListaCurso.clear();
+            ListaCurso.apply();
         }
 
 }
