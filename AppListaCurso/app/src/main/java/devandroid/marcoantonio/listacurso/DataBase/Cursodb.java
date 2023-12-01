@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,10 @@ public class Cursodb extends SQLiteOpenHelper {
 
         db = getWritableDatabase();
     }
+
+   /* public Cursodb(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }*/
 
     @Override // sqLiteDatabase de não der certo db usa o sql...
     public void onCreate(SQLiteDatabase db) {

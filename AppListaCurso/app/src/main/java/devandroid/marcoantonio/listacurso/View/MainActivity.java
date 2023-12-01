@@ -7,7 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.List;
+
 import devandroid.marcoantonio.listacurso.Controller.CursoController;
+import devandroid.marcoantonio.listacurso.Model.Cursando;
 import devandroid.marcoantonio.listacurso.Model.Curso;
 import devandroid.marcoantonio.listacurso.R;
 
@@ -15,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         CursoController controller;
         Curso curso;
+
+        Cursando cursando;
 
         EditText id_curso;
 
@@ -24,12 +29,16 @@ public class MainActivity extends AppCompatActivity {
         Button btn_finalizar;
 
         Spinner spinner;
+
+        List<Cursando> dados;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         controller = new CursoController(this);
+        dados = controller.getListaDados();
+
         controller.toString();
 
         curso = new  Curso();
@@ -48,4 +57,6 @@ public class MainActivity extends AppCompatActivity {
         btn_finalizar = findViewById(R.id.id_finalizar);
 
     }
+
+
 }

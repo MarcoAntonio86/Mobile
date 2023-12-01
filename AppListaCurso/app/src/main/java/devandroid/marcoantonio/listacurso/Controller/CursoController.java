@@ -6,7 +6,10 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import java.util.List;
+
 import devandroid.marcoantonio.listacurso.Model.Cursando;
+import devandroid.marcoantonio.listacurso.Model.Curso;
 import devandroid.marcoantonio.listacurso.View.MainActivity;
 
 public class CursoController {
@@ -39,6 +42,23 @@ public class CursoController {
             // dados.put("recomendacao", combustivel.getRecomendacao()); você tem de descobrir o equivalente a isso p/ o codigo
 
             salvarObjeto("curso", dados);
+        }
+
+        public Curso buscar (Curso curso){
+            curso.setCurso(preferences.getString("Curso", "NA"));
+            return curso;
+        }
+
+        public static List<Cursando> getListaDados() {
+            return ListaDados();
+        }
+
+        public void alterar (Curso curso) {
+            ContentValues dados = new ContentValues();
+
+            dados.put("id", curso.getID());
+            //  dados.put("recomendacao", combustivel.getRecomendacao()); ver o equivalente
+            alterarObjeto("Curso", dados);
         }
 
         public void deletar(int id) {deletarObjeto("curso", id);}
