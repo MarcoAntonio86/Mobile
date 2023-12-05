@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import devandroid.marcoantonio.listacurso.Model.Cursando;
-import devandroid.marcoantonio.listacurso.Model.Curso;
 
 public class Cursodb extends SQLiteOpenHelper {
 
@@ -23,17 +22,15 @@ public class Cursodb extends SQLiteOpenHelper {
     Cursor cursor;
     SQLiteDatabase db;
 
-    public cursoDB(Context context) {
+    public Cursodb(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
 
         db = getWritableDatabase();
     }
 
-   /* public Cursodb(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }*/
+}
 
-    @Override // sqLiteDatabase de não der certo db usa o sql...
+   @Override // sqLiteDatabase de não der certo db usa o sql...
     public void onCreate(SQLiteDatabase db) {
 
         String sqlTabela =
