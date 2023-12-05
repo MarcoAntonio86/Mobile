@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lista</string>
+    <string name="txt_hint_edit_curso">Curso</string>
+</resources>
