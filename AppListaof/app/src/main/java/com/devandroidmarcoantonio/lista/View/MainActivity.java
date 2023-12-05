@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.devandroidmarcoantonio.lista.Controller.ListaController;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_excluir;
     Button btn_limpar;
     Button btn_finalizar;
+
+    Spinner spinner;
 
 
 
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         btn_excluir = findViewById(R.id.btn_excluir);
         btn_limpar = findViewById(R.id.btn_limpar);
         btn_finalizar = findViewById(R.id.btn_finalizar);
+
+       spinner = findViewById(R.id.spinner);
 
         btn_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,8 +81,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         Log.i("POOAndroid", lista.toString());
 
 
     }
+
+
+
 }
