@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         btn_limpar = findViewById(R.id.btn_limpar);
         btn_finalizar = findViewById(R.id.btn_finalizar);
 
-        // ...
+
 
         spinner = findViewById(R.id.spinner);
 
-// Adicione um OnItemSelectedListener ao Spinner
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-// ...
+
 
 
         btn_limpar.setOnClickListener(new View.OnClickListener() {
@@ -99,22 +99,22 @@ public class MainActivity extends AppCompatActivity {
                 String novoItem = id_curso.getText().toString();
                 lista.setNomeItem(novoItem);
 
-                // Adicionar o item à lista do Spinner
+
                 spinnerItems.add(novoItem);
 
-                // Atualizar o adaptador do Spinner
+
                 ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(MainActivity.this,
                         android.R.layout.simple_spinner_item, spinnerItems);
                 spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(spinnerAdapter);
 
-                // Limpar o campo de entrada
+
                 id_curso.setText("");
 
-                // Mostrar mensagem de sucesso
+
                 Toast.makeText(MainActivity.this, "Dados Salvos com Sucesso!!!", Toast.LENGTH_LONG).show();
 
-                // Salvar no banco de dados
+
                 controller.salvar(lista);
             }
         });
@@ -124,19 +124,19 @@ public class MainActivity extends AppCompatActivity {
         btn_excluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtenha o item selecionado no Spinner
+
                 String selectedItem = spinner.getSelectedItem().toString();
 
-                // Remova o item do Spinner
+
                 spinnerItems.remove(selectedItem);
 
-                // Atualize o adaptador do Spinner
+
                 ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(MainActivity.this,
                         android.R.layout.simple_spinner_item, spinnerItems);
                 spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(spinnerAdapter);
 
-                // Exclua o item do banco de dados
+
                 controller.excluirItemDoBanco(selectedItem);
 
                 Toast.makeText(MainActivity.this, "Item excluído: " + selectedItem, Toast.LENGTH_SHORT).show();

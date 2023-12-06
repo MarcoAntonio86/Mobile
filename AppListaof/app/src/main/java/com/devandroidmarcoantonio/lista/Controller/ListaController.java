@@ -26,7 +26,7 @@ public class ListaController {
         this.context = context;
         dbHelper = new DBHelper(context);
 
-        // Inicializar SharedPreferences
+
         preferences = context.getSharedPreferences(NOME_PREFERENCES, 0);
         listaItem = preferences.edit();
     }
@@ -39,7 +39,7 @@ public class ListaController {
     }
 
     public void salvar(Lista lista) {
-        // Salvar no SQLite
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DBHelper.COLUMN_NOME_ITEM, lista.getNomeItem());
@@ -47,12 +47,12 @@ public class ListaController {
         try {
             db.insertOrThrow(DBHelper.TABLE_NAME, null, values);
         } catch (SQLException e) {
-            // Trate erros de inserção aqui, se necessário
+
         } finally {
             db.close();
         }
 
-        // Salvar no SharedPreferences
+
         listaItem.putString("NomeItem", lista.getNomeItem());
         listaItem.apply();
 
@@ -60,25 +60,25 @@ public class ListaController {
     }
 
     public Lista buscar(Lista lista) {
-        // Buscar no SharedPreferences
+
         lista.setNomeItem(preferences.getString("NomeItem", "NA"));
 
-        // Buscar no SQLite
+
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        // Execute a consulta e atualize a lista, se necessário
+
         db.close();
 
         return lista;
     }
 
     public void limpar() {
-        // Limpar SharedPreferences
+
         listaItem.clear();
         listaItem.apply();
 
-        // Limpar SQLite
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        // Execute a operação de limpeza, se necessário
+
         db.close();
     }
 
@@ -90,7 +90,7 @@ public class ListaController {
         try {
             db.delete(DBHelper.TABLE_NAME, selection, selectionArgs);
         } catch (SQLException e) {
-            // Trate erros de exclusão aqui, se necessário
+
             Log.e("MVC_Controller", "Erro ao excluir item do banco de dados: " + e.getMessage());
         } finally {
             db.close();
