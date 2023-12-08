@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btn_excluir = findViewById(R.id.btn_excluir);
         btn_limpar = findViewById(R.id.btn_limpar);
         btn_finalizar = findViewById(R.id.btn_finalizar);
+        btn_atualizar = findViewById(R.id.btn_atualizar);
 
 
 
