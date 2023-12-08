@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_excluir;
     Button btn_limpar;
     Button btn_finalizar;
+    Button btn_atualizar;
 
     Spinner spinner;
 

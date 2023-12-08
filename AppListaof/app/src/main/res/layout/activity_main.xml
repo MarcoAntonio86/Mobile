@@ -121,5 +121,15 @@
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/btn_atualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:text="Atualizar"
+        android:importantForAutofill="no"/>
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
