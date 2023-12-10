@@ -9,12 +9,12 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "sua_base_de_dados.db";
     private static final int DATABASE_VERSION = 1;
 
-    // Defina o nome da tabela e as colunas
+
     public static final String TABLE_NAME = "sua_tabela";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NOME_ITEM = "nome_item";
 
-    // SQL para criar a tabela
+
     private static final String SQL_CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +

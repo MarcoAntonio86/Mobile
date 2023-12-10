@@ -91,9 +91,8 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="50dp"
-                >
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_limpar"
@@ -102,8 +101,7 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="50dp"
-                    android:text="Limpar"
-                    />
+                    android:text="Limpar" />
 
                 <Button
                     android:id="@+id/btn_finalizar"
@@ -112,24 +110,26 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="50dp"
-                    android:text="Finalizar"
-                    />
+                    android:text="Finalizar" />
+
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+            <Button
+                android:id="@+id/btn_atualizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:importantForAutofill="no"
+                android:text="Atualizar" />
 
         </LinearLayout>
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_atualizar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="16dp"
-        android:text="Atualizar"
-        android:importantForAutofill="no"/>
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -62,18 +62,30 @@ public class MainActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
 
 
+        List<String> itensDoBanco = controller.obterItensDoBanco();
+        spinnerItems.addAll(itensDoBanco);
+
+
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, spinnerItems);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 String selectedItem = adapterView.getItemAtPosition(position).toString();
-                // Faça algo com o item selecionado, se necessário
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                // Nada foi selecionado
+
             }
         });
+
+
+
 
 
 
@@ -147,11 +159,84 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        btn_atualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (spinner.getSelectedItem() != null) {
+
+                    String itemAntigo = spinner.getSelectedItem().toString();
+
+
+                    id_curso.setText(itemAntigo);
+
+
+                    spinnerItems.remove(itemAntigo);
+
+
+                    ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(MainActivity.this,
+                            android.R.layout.simple_spinner_item, spinnerItems);
+                    spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(spinnerAdapter);
+
+
+                    controller.excluirItemDoBanco(itemAntigo);
+                } else {
+
+                    Toast.makeText(MainActivity.this, "Selecione um item para atualizar.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+
+
 
         Log.i("POOAndroid", lista.toString());
 
 
     }
+
+    private void atualizarDados() {
+
+        String itemAntigo = spinner.getSelectedItem().toString();
+
+
+        String itemNovo = id_curso.getText().toString();
+
+
+        if (!itemAntigo.equals(itemNovo)) {
+
+            controller.atualizarItemNoBanco(itemAntigo, itemNovo);
+
+
+            int indiceItemAntigo = spinnerItems.indexOf(itemAntigo);
+            if (indiceItemAntigo != -1) {
+                // Remover o item antigo da lista e adicionar o novo item
+                spinnerItems.remove(indiceItemAntigo);
+                spinnerItems.add(indiceItemAntigo, itemNovo);
+
+
+                ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(MainActivity.this,
+                        android.R.layout.simple_spinner_item, spinnerItems);
+                spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(spinnerAdapter);
+
+                spinner.setSelection(indiceItemAntigo);
+            }
+
+
+            id_curso.setText("");
+
+
+            Toast.makeText(MainActivity.this, "Dados Atualizados com Sucesso!!!", Toast.LENGTH_LONG).show();
+        } else {
+
+            Toast.makeText(MainActivity.this, "Os itens são iguais. Nenhuma atualização realizada.", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
 
 
 
